@@ -1,0 +1,566 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Feliz Día del Padre</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+#particles{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:-1;
+
+    pointer-events:none;
+}
+.timeline-item img{
+
+    width:100%;
+
+    padding:10px;
+
+    background:white;
+
+    border-radius:5px;
+
+    box-shadow:
+    0 15px 40px rgba(0,0,0,.5);
+
+    transform:rotate(-2deg);
+
+    transition:.5s;
+}
+
+.timeline-item img:hover{
+
+    transform:
+    rotate(0deg)
+    scale(1.04);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    color:white;
+    overflow-x:hidden;
+
+    background: linear-gradient(
+        -45deg,
+        #020617,
+        #0f172a,
+        #1e293b,
+        #0f172a
+    );
+
+    background-size:400% 400%;
+
+    animation:bgMove 15s ease infinite;
+}
+
+@keyframes bgMove{
+    0%{
+        background-position:0% 50%;
+    }
+
+    50%{
+        background-position:100% 50%;
+    }
+
+    100%{
+        background-position:0% 50%;
+    }
+}
+
+/* HERO */
+
+.hero{
+
+    position:relative;
+
+    height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    overflow:hidden;
+}
+
+.hero h1{
+
+    font-size:5rem;
+
+    background:
+    linear-gradient(
+        45deg,
+        white,
+        #60a5fa,
+        #93c5fd
+    );
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+    text-shadow:
+    0 0 40px rgba(96,165,250,.5);
+
+}
+
+.hero p{
+    max-width:700px;
+    font-size:1.2rem;
+}
+
+.btn{
+    margin-top:30px;
+    padding:14px 28px;
+    border:none;
+    border-radius:30px;
+    background:#3b82f6;
+    color:white;
+    cursor:pointer;
+    font-size:1rem;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:scale(1.05);
+}
+
+/* SECTIONS */
+
+section{
+    padding:100px 10%;
+}
+
+.title{
+    text-align:center;
+    font-size:2.5rem;
+    margin-bottom:50px;
+}
+
+/* CARDS */
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.card{
+    padding:30px;
+
+    background:rgba(255,255,255,.06);
+
+    backdrop-filter:blur(12px);
+
+    border:1px solid rgba(255,255,255,.1);
+
+    border-radius:20px;
+
+    box-shadow:
+    0 8px 30px rgba(0,0,0,.35);
+
+    transition:.4s;
+}
+
+.card:hover{
+
+    transform:
+    translateY(-10px)
+    scale(1.02);
+
+}
+
+.card h3{
+    margin-bottom:10px;
+}
+
+/* TIMELINE */
+
+.timeline{
+    display:flex;
+    flex-direction:column;
+    gap:40px;
+}
+
+.timeline-item{
+    background:#1e293b;
+    padding:25px;
+    border-radius:20px;
+}
+
+.timeline-item img{
+    width:100%;
+    border-radius:15px;
+    margin-bottom:15px;
+}
+
+/* ADMIRACION */
+
+.admire{
+    text-align:center;
+}
+
+.admire ul{
+    list-style:none;
+    font-size:1.3rem;
+    line-height:3rem;
+}
+
+/* COUNTER */
+
+.counter{
+    text-align:center;
+}
+
+.counter h2{
+    font-size:4rem;
+}
+
+.counter p{
+    margin-top:15px;
+    font-size:1.1rem;
+}
+
+/* ENVELOPE */
+
+.envelope{
+    text-align:center;
+}
+
+.mail{
+    font-size:6rem;
+    cursor:pointer;
+    transition:.4s;
+}
+
+.mail:hover{
+    transform:scale(1.15);
+}
+
+.letter{
+    display:none;
+    max-width:800px;
+    margin:auto;
+    margin-top:40px;
+    background:#1e293b;
+    padding:40px;
+    border-radius:20px;
+    line-height:1.8;
+}
+
+footer{
+    text-align:center;
+    padding:60px 20px;
+    font-size:1.2rem;
+}
+
+.fade{
+    opacity:0;
+    transform:translateY(30px);
+    transition:1s;
+}
+
+.fade.show{
+    opacity:1;
+    transform:translateY(0);
+}
+#particles{
+    position:fixed;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    z-index:-1;
+}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/tsparticles@3/tsparticles.bundle.min.js"></script>
+</head>
+<body>
+<div id="particles"></div>
+<!-- HERO -->
+
+<section class="hero">
+
+<h1>Feliz Día del Padre</h1>
+
+<p>
+Gracias por todo lo que has hecho por mí.
+Esta página es un pequeño homenaje para alguien muy importante en mi vida.
+</p>
+
+<a href="#aprendi">
+<button class="btn">Comenzar</button>
+</a>
+
+</section>
+
+<!-- APRENDI -->
+
+<section id="aprendi">
+
+<h2 class="title fade">Lo que aprendí de ti</h2>
+
+<div class="cards">
+
+<div class="card fade">
+<h3>💪 Trabajo</h3>
+<p>Me enseñaste que las metas se alcanzan con esfuerzo y constancia.</p>
+</div>
+
+<div class="card fade">
+<h3>❤️ Familia</h3>
+<p>Siempre procuraste que no nos faltara nada.</p>
+</div>
+
+<div class="card fade">
+<h3>🎯 Perseverancia</h3>
+<p>Aprendí que rendirse no es una opción.</p>
+</div>
+
+<div class="card fade">
+<h3>🤝 Responsabilidad</h3>
+<p>Con el ejemplo me enseñaste a cumplir mi palabra.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- TIMELINE -->
+
+<section>
+
+
+<div class="timeline">
+
+<div class="timeline-item fade">
+<img src="3.jpeg">
+<h3>Cuando era niño</h3>
+<p>
+Gracias por acompañarme cuando apenas comenzaba a descubrir el mundo.
+</p>
+</div>
+
+<div class="timeline-item fade">
+<img src="2.jpeg">
+<h3>Mi adolescencia</h3>
+<p>
+Aunque a veces no estuvimos de acuerdo, siempre estuviste ahí.
+</p>
+</div>
+
+<div class="timeline-item fade">
+<img src="WhatsApp Image 2026-06-21 at 10.39.08 AM.jpeg">
+<h3>Hoy</h3>
+<p>
+Ahora entiendo muchas cosas que antes no veía.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- ADMIRACION -->
+
+<section>
+
+<h2 class="title fade">Lo que admiro de ti</h2>
+
+<div class="admire fade">
+<ul>
+<li>⭐ Tu esfuerzo</li>
+<li>⭐ Tu paciencia</li>
+<li>⭐ Tu fortaleza</li>
+<li>⭐ Tu sentido del humor</li>
+<li>⭐ Tu amor por la familia</li>
+</ul>
+</div>
+
+</section>
+
+<!-- CONTADOR -->
+
+<section>
+
+<div class="counter fade">
+
+<h2 id="years">23</h2>
+
+<p>
+Años siendo mi papá y mi ejemplo.
+</p>
+
+</div>
+
+</section>
+
+<!-- CARTA -->
+
+<section>
+
+<h2 class="title fade">Un mensaje para ti</h2>
+
+<div class="envelope fade">
+
+<div class="mail" onclick="openLetter()">
+📩
+</div>
+
+<p>Haz clic para abrir la carta.</p>
+
+<div class="letter" id="letter">
+
+<h3>Querido Papá:</h3>
+
+<br>
+
+<p>
+Muchas veces no te digo todo lo que siento porque no siempre encuentro las palabras adecuadas.
+</p>
+
+<br>
+
+<p>
+Pero quiero que sepas que valoro cada sacrificio, cada consejo y cada esfuerzo que has hecho por mí.
+</p>
+
+<br>
+
+<p>
+Gracias por enseñarme con el ejemplo, por apoyarme cuando lo he necesitado y por ser una persona de la que me siento orgulloso.
+</p>
+
+<br>
+
+<p>
+Te quiero mucho y espero que este pequeño detalle te recuerde lo importante que eres para mí.
+</p>
+
+<br>
+
+<p>
+Con cariño,
+<br><br>
+<strong>Bryan ❤️</strong>
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+❤️ Feliz Día del Padre ❤️
+
+</footer>
+
+<script>
+
+function openLetter(){
+    document.getElementById("letter").style.display="block";
+    document.getElementById("letter").scrollIntoView({
+        behavior:"smooth"
+    });
+}
+
+const observer = new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+        if(entry.isIntersecting){
+            entry.target.classList.add("show");
+        }
+    });
+});
+
+document.querySelectorAll(".fade").forEach(el=>{
+    observer.observe(el);
+});
+
+
+</script>
+<script>
+(async () => {
+
+await tsParticles.load({
+
+id: "particles",
+
+options: {
+
+fullScreen: {
+enable:false
+},
+
+background:{
+color:"transparent"
+},
+
+particles:{
+
+number:{
+value:100
+},
+
+color:{
+value:"#60a5fa"
+},
+
+opacity:{
+value:0.3
+},
+
+size:{
+value:{
+min:1,
+max:3
+}
+},
+
+links:{
+enable:true,
+distance:150,
+color:"#60a5fa",
+opacity:0.15
+},
+
+move:{
+enable:true,
+speed:1
+}
+}
+
+}
+
+});
+
+})();
+</script>
+</body>
+</html>
+
